@@ -9,8 +9,8 @@ config.ORIGINAL_HEIGHT = 2400
 config.ORIGINAL_WIDTH = 1935
 
 # height and width to resize image
-config.HEIGHT = 320
-config.WIDTH  = 256
+config.HEIGHT = 800
+config.WIDTH  = 640
 
 # input cephalogram image to the base network
 config.IMAGE_INPUT = Input(shape=(config.HEIGHT, config.WIDTH, 3), name="cephalogram")
