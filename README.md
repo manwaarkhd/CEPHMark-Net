@@ -25,13 +25,15 @@ This repository contains the implementation of <b>CEPHMark-Net</b>, a novel, end
 <h2 align="left">Overview</h2>
 <p align="justify">
 Cephalometric analysis plays a crucial role in orthodontic treatment planning and maxillofacial surgeries. Traditionally, this process involves manually tracing anatomical landmarks on two-dimensional (2D) radiographs, known as cephalograms.This manual process is time-consuming and subject to inter- and intra-observer variability. This repository presents state-of-the-art automatic cephalometric landmark detection framework that utilizes a novel multi-head Convolutional Neural Network (CNN). The framework consists of two primary modules: landmark detection and landmark refinement, both leveraging a shared <b><i>backbone neural network</i></b>. This backbone network functions as a feature extractor, providing rich, high-dimensional features to both modules. The <b><i>landmark detection module (LDM)</i></b> module utilizes these features to simultaneously regress coordinates for all landmarks, capturing both global geometric relationships among landmarks global. Our framework incorporates a cropping mechanism to extract high-dimensional features from multi-resolution feature tensors generated during the backbone network's forward pass. To effectively bridge the semantic gap between these features, we use a <b><i>semantic fusion block (SFB)</i></b> that integrates high-resolution, semantically weaker features with low-resolution, semantically richer features. This fusion yields a single, high-level feature map with fine resolution, which the <b><i>landmark refinement module (LRM)</i></b> module uses to refine the initial landmark estimates.
-<h3 align="left">Key Features</h3>
-  <ul>
-    <li> A single, end-to-end trainable, multi-head CNN architecture with a backbone feature extractor. This design allows for the reuse of multi-resolution feature maps from different layers of the backbone network, computed during the forward pass, without additional computational cost.
-    <li> Joint learning of both modules that enables the framework to leverage both global hard/soft tissue characteristics and geometric landmark relations in a unified manner.
-    <li> A semantic fusion block that effectively leverages feature maps from multiple blocks of the backbone network to generate semantically rich features. Subsequently, the refinement module extracts anatomically relevant features to further refine the initially coarsely predicted landmark locations, with the help of a multi-head refinement loss.
-  </ul>
 </p>
+<h3 align="left">Key Features</h3>
+<ul align="justify">
+  <li> <b>Multi-head CNN Architecture:</b> A two-stage regression framework with a shared backbone feature extractor across two integrated modules.
+  <li> <b>End-to-end Trainable:</b> A unified architecture enabling simultaneous detection and refinement, making the system efficient and scalable.
+  <li> <b>Semantic Fusion Block:</b> Integrates high- and low-resolution features to capture both global geometric relations and local tissue characteristics.
+  <li> <b>Real-time Inter-model Communication:</b> Enables the system to learn from and correct each module's predictions, boosting overall accuracy.
+  <li> <b>Multi-head Refinment Loss:</b> Aggregates predictions from multiple CNN heads, each specializing in different aspects of landmark detection.
+</ul>
 
 ## Installatoin
 ### Prerequisites
