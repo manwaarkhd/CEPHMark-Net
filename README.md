@@ -55,14 +55,8 @@ Accurate identification and precise localization of cephalometric landmarks prov
    pip install -r requirements.txt
    ```
 
-## Usage
-### Preparing the Data
-1. Download the dataset from the [ISBI 2015 dataset link](https://figshare.com/s/37ec464af8e81ae6ebbf).
-2. Organize the dataset as shown in the Datset section below.
-3. Ensure that annotation files are placed correctly within the `Annotations` directory.
-
 ## Dataset
-We utilized the publicly available [ISBI 2015 Dataset]() by Wang et al. (2015), which consists of 400 high-resolution X-ray images. Each image has spatial dimensions of 1935 × 2400 pixels, with a spatial resolution of 0.1 mm/pixel in both directions. We employed the same 150 images for training as used in the ISBI Grand Challenge 2015. The remaining 250 images are reserved for evaluation and further partitioned into two distinct subsets: Test1 and Test2. Test1 serves as our validation set for assessing the accuracy of our method during the development phase, and Test2 is used as our test set for the final evaluation of our proposed method. <br>
+We utilized the publicly available [ISBI 2015 Dataset](https://ieeexplore.ieee.org/iel7/42/4359023/07061486.pdf?casa_token=Wv4hnXcVbf4AAAAA:eIQCBU1Y_6s0H9s1WXZk-c30fQQq-B7_nz-ADloTje8WqKzfZPE_7TXpaCxSob5L0CqG9F8rpkvk) by Wang et al. (2015), which consists of 400 high-resolution X-ray images. Each image has spatial dimensions of 1935 × 2400 pixels, with a spatial resolution of 0.1 mm/pixel in both directions. We employed the same 150 images for training as used in the ISBI Grand Challenge 2015. The remaining 250 images are reserved for evaluation and further partitioned into two distinct subsets: Test1 and Test2. Test1 serves as our validation set for assessing the accuracy of our method during the development phase, and Test2 is used as our test set for the final evaluation of our proposed method. <br>
 After downloading the files, please create a folder named `datasets` and organize it as follows:
 ```
 datasets/
@@ -92,6 +86,34 @@ datasets/
             ├── 002.txt
             ├── ...
             └── 400.txt
+```
+
+## Usage
+### Preparing the Data
+1. Download the dataset from [link](https://figshare.com/s/37ec464af8e81ae6ebbf).
+2. Organize the dataset as shown in the Datset section below.
+3. Ensure that annotation files are placed correctly within the `Annotations` directory.
+
+### Configuration:
+The configuration of the CEPHMark-Net framework is managed through the `config.py` file. This file contains various settings, hyper-parameters, and heuristics that can be adjusted to fine-tune the model's performance and adapt it to different datasets. To customize the configuration for your specific use case, edit the `config.py` file accordingly. Here are some common modifications you might consider:
+- **Adjusting Image Dimensions:** If your dataset has different image dimensions, modify **`config.ORIGINAL_HEIGHT`**, **`config.ORIGINAL_WIDTH`**.
+- **Region of Interest (ROI) Pooling:** Adjust the size of the pooling region used for extracting features from the detected regions by **`config.ROI_POOL_SIZE`**.
+- **Updating Training Parameters:** Modify **`config.TRAIN.EPOCHS`** and **`config.TRAIN.OPTIMIZER`** to set the number of training epochs and choose a different optimizer or learning rate.
+
+### Training
+To train the model on `Train` dataset, use:
+```bash
+python train.py
+```
+### Validation
+To run inference on `Test1` dataset using pre-trained weights:
+```bash
+python valid.py
+```
+### Testing
+To evaluate the model on the `Test2` dataset:
+```bash
+python test.py
 ```
 
 ## Results
