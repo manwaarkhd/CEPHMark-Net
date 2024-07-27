@@ -35,6 +35,25 @@ Accurate identification and precise localization of cephalometric landmarks prov
 </p>
 
 ## Installatoin
+### Prerequisites
+- Python 3.8
+- TensorFlow 2.10
+- OpenCV 4.9
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/manwaarkhd/CEPHMark-Net.git
+   cd CEPHMark-Net
+   ```
+3. Set up a Python virtual environment (optional but recommended):
+   ```bash
+   python3 -m venv pyenv
+   source pyenv/bin/activate  # On Windows use `env\Scripts\activate`
+   ```
+5. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 ### Preparing the Data
@@ -74,6 +93,9 @@ datasets/
             ├── ...
             └── 400.txt
 ```
+
+## Results
+For a comprehensive analysis of the results, including quantitative metrics such as mean squared error (MSE) and landmark detection accuracy, as well as qualitative comparisons with traditional methods and other state-of-the-art approaches, please refer to our [paper](https://www.sciencedirect.com/science/article/abs/pii/S095741742401707X). The paper provides detailed tables, charts, and visualizations illustrating the performance improvements and validation of our method.
 
 ## Citation
 If you find our work useful in your research, please consider citing our paper:
