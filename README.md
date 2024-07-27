@@ -34,6 +34,47 @@ Accurate identification and precise localization of cephalometric landmarks prov
   </ul>
 </p>
 
+## Installatoin
+
+## Usage
+### Preparing the Data
+1. Download the dataset from the [ISBI 2015 dataset link](https://figshare.com/s/37ec464af8e81ae6ebbf).
+2. Organize the dataset as shown in the Datset section below.
+3. Ensure that annotation files are placed correctly within the `Annotations` directory.
+
+## Dataset
+We utilized the publicly available [ISBI 2015 Dataset]() by Wang et al. (2015), which consists of 400 high-resolution X-ray images. Each image has spatial dimensions of 1935 × 2400 pixels, with a spatial resolution of 0.1 mm/pixel in both directions. We employed the same 150 images for training as used in the ISBI Grand Challenge 2015. The remaining 250 images are reserved for evaluation and further partitioned into two distinct subsets: Test1 and Test2. Test1 serves as our validation set for assessing the accuracy of our method during the development phase, and Test2 is used as our test set for the final evaluation of our proposed method. <br>
+After downloading the files, please create a folder named `datasets` and organize it as follows:
+```
+datasets/
+└── ISBI Dataset/
+    ├── Dataset/
+    │   ├── Training/
+    │   │   ├── 001.bmp
+    │   │   ├── 002.bmp
+    │   │   └── ...
+    │   └── Testing/
+    │       ├── Test1/
+    │       │   ├── 151.bmp
+    │       │   ├── 152.bmp
+    │       │   └── ...
+    │       └── Test2/
+    │           ├── 301.bmp
+    │           ├── 302.bmp
+    │           └── ...
+    └── Annotations/
+        ├── Junior Orthodontist/
+        │   ├── 001.txt
+        │   ├── 002.txt
+        │   ├── ...
+        │   └── 400.txt
+        └── Senior Orthodontist/
+            ├── 001.txt
+            ├── 002.txt
+            ├── ...
+            └── 400.txt
+```
+
 ## Citation
 If you find our work useful in your research, please consider citing our paper:
 ```BibTeX
