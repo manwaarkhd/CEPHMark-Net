@@ -20,7 +20,6 @@ This repository contains the implementation of <b>CEPHMark-Net</b>, a novel, end
 </div>
 <br>
 <div align="center"> Schematic of the proposed cephalometric landmark detection framework, featuring a <b>landmark detection module (LDM)</b>, <b>semantic fusion block (SFB)</b>, and <b>landmark refinement module (LRM)</b>. </div>
-<br>
 
 <h2 align="left">Overview</h2>
 <p align="justify">
