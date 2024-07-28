@@ -31,7 +31,7 @@ Cephalometric analysis plays a crucial role in orthodontic treatment planning an
   <li> <b>End-to-end Trainable:</b> A unified architecture enabling simultaneous detection and refinement, making the system efficient and scalable.
   <li> <b>Semantic Fusion Block:</b> Integrates high- and low-resolution features to capture both global geometric relations and local tissue characteristics.
   <li> <b>Real-time Inter-model Communication:</b> Enables the system to learn from and correct each module's predictions, boosting overall accuracy.
-  <li> <b>Multi-head Refinment Loss:</b> Aggregates predictions from multiple CNN heads, each specializing in different aspects of landmark detection.
+  <li> <b>Multi-head Refinement Loss:</b> Aggregates predictions from multiple CNN heads, each specializing in different aspects of landmark detection.
 </ul>
 
 ## Installatoin
